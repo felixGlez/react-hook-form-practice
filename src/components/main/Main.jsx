@@ -6,14 +6,17 @@ import { StyledBackground, StyledMainContainer } from './styles';
 const Main = () => {
 	const [formValues, setFormValues] = useState({
 		name: '',
-		number: ''
+		cardNumber: '',
+		mm: '',
+		yy: '',
+		cvc: ''
 	});
-	console.log(formValues);
+	// console.log(formValues);
 
 	return (
 		<StyledMainContainer>
 			<StyledBackground />
-			<Cards formValues={formValues} setFormValues={setFormValues} />
+			<Cards formValues={formValues} />
 			<Form formValues={formValues} setFormValues={setFormValues} />
 		</StyledMainContainer>
 	);
