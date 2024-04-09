@@ -1,4 +1,3 @@
-import { useForm } from 'react-hook-form';
 import {
 	StyledForm,
 	StyledHalfInputsContainer,
@@ -9,18 +8,7 @@ import {
 	StyledSmallInputsContainer
 } from './styles';
 
-const Form = ({ formValues, setFormValues }) => {
-	const {
-		handleSubmit,
-		register,
-		watch,
-		formState: { errors }
-	} = useForm({ mode: 'onChange' });
-	console.log(errors);
-
-	const test = watch();
-	console.log(test);
-
+const Form = ({ handleSubmit, register, errors }) => {
 	return (
 		<StyledForm onSubmit={handleSubmit(formSubmit)}>
 			<StyledInputContainer>
@@ -55,7 +43,7 @@ const Form = ({ formValues, setFormValues }) => {
 							message: 'Wrong format, numbers only'
 						}
 					})}
-					onChange={event => saveValues(event, formValues, setFormValues)}
+					// onChange={event => saveValues(event, formValues, setFormValues)}
 				/>
 				<span>{errors?.cardNumber?.message}</span>
 			</StyledInputContainer>
@@ -75,7 +63,7 @@ const Form = ({ formValues, setFormValues }) => {
 									message: 'Wrong format, numbers only'
 								}
 							})}
-							onChange={event => saveValues(event, formValues, setFormValues)}
+							// onChange={event => saveValues(event, formValues, setFormValues)}
 						/>
 						<span>{errors?.mm?.message}</span>
 						<StyledInput
@@ -83,8 +71,16 @@ const Form = ({ formValues, setFormValues }) => {
 							name='yy'
 							placeholder='YY'
 							maxLength={2}
-							onChange={event => saveValues(event, formValues, setFormValues)}
+							{...register('yy', {
+								required: "Can't be blank",
+								pattern: {
+									value: /^[0-9]+$/,
+									message: 'Wrong format, numbers only'
+								}
+							})}
+							// onChange={event => saveValues(event, formValues, setFormValues)}
 						/>
+						<span>{errors?.yy?.message}</span>
 					</StyledSmallInputsContainer>
 				</StyledHalfInputsContainer>
 				<StyledHalfInputsContainer>
@@ -94,8 +90,16 @@ const Form = ({ formValues, setFormValues }) => {
 						name='cvc'
 						placeholder='e.g. 123'
 						maxLength={3}
-						onChange={event => saveValues(event, formValues, setFormValues)}
+						{...register('cvc', {
+							required: "Can't be blank",
+							pattern: {
+								value: /^[0-9]+$/,
+								message: 'Wrong format, numbers only'
+							}
+						})}
+						// onChange={event => saveValues(event, formValues, setFormValues)}
 					/>
+					<span>{errors?.cvc?.message}</span>
 				</StyledHalfInputsContainer>
 			</StyledInlineInputsContainer>
 			<StyledInputContainer>
@@ -105,10 +109,10 @@ const Form = ({ formValues, setFormValues }) => {
 	);
 };
 
-const saveValues = (event, formValues, setFormValues) => {
-	const { name, value } = event.target;
-	setFormValues({ ...formValues, [name]: value });
-};
+// const saveValues = (event, formValues, setFormValues) => {
+// 	const { name, value } = event.target;
+// 	setFormValues({ ...formValues, [name]: value });
+// };
 
 const formSubmit = () => {};
 
