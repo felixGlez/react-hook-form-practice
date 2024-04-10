@@ -1,4 +1,5 @@
 import {
+	StyledButton,
 	StyledForm,
 	StyledHalfInputsContainer,
 	StyledInlineInputsContainer,
@@ -103,7 +104,7 @@ const Form = ({ handleSubmit, register, errors }) => {
 				</StyledHalfInputsContainer>
 			</StyledInlineInputsContainer>
 			<StyledInputContainer>
-				<input type='submit' value='Enviar' />
+				<StyledButton type='submit' value='Enviar' />
 			</StyledInputContainer>
 		</StyledForm>
 	);

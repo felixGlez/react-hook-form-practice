@@ -59,6 +59,17 @@ const StyledSmallInputsContainer = styled.div`
 	gap: 10px;
 `;
 
+const StyledButton = styled.input`
+	background-color: #21092f;
+	color: white;
+	font-family: ${FONTS.$primary};
+	font-size: 1.125rem;
+	border: none;
+	border-radius: 8px;
+	height: 53px;
+	cursor: pointer;
+`;
+
 export {
 	StyledForm,
 	StyledInputContainer,
@@ -66,5 +77,6 @@ export {
 	StyledLabel,
 	StyledInlineInputsContainer,
 	StyledHalfInputsContainer,
-	StyledSmallInputsContainer
+	StyledSmallInputsContainer,
+	StyledButton
 };

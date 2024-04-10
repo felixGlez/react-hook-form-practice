@@ -21,10 +21,10 @@ const Main = () => {
 		watch,
 		formState: { errors }
 	} = useForm({ mode: 'onChange' });
-	console.log(errors);
+	// console.log(errors);
 
 	const formValues = watch();
-	console.log(formValues);
+	// console.log(formValues);
 
 	return (
 		<StyledMainContainer>

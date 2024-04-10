@@ -7,6 +7,7 @@ const StyledCardsContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 2rem;
 `;
 
 const StyledFrontCard = styled.div`
@@ -16,6 +17,8 @@ const StyledFrontCard = styled.div`
 	flex-direction: column;
 	padding: 1.875rem;
 	background-image: url('./images/bg-card-front.png');
+	box-shadow: 20px 20px 50px 0px #00000036;
+	border-radius: 10px;
 `;
 
 const StyledIcon = styled.img`
@@ -48,6 +51,18 @@ const StyledCardDate = styled.span`
 	color: white;
 `;
 
+const StyledBackCard = styled.div`
+	width: 447px;
+	height: 245px;
+	display: flex;
+	flex-direction: column;
+	padding: 1.875rem;
+	background-image: url('./images/bg-card-back.png');
+	box-shadow: 20px 20px 50px 0px #00000036;
+	margin-left: 10rem;
+	border-radius: 10px;
+`;
+
 export {
 	StyledCardsContainer,
 	StyledFrontCard,
@@ -55,5 +70,6 @@ export {
 	StyledCardNumber,
 	StyledCardName,
 	StyledFooterCardContainer,
-	StyledCardDate
+	StyledCardDate,
+	StyledBackCard
 };

@@ -5,7 +5,8 @@ import {
 	StyledCardNumber,
 	StyledCardName,
 	StyledFooterCardContainer,
-	StyledCardDate
+	StyledCardDate,
+	StyledBackCard
 } from './styles';
 
 const Cards = ({ formValues }) => {
@@ -31,7 +32,7 @@ const Cards = ({ formValues }) => {
 					</StyledCardDate>
 				</StyledFooterCardContainer>
 			</StyledFrontCard>
-			<StyledFrontCard />
+			<StyledBackCard />
 		</StyledCardsContainer>
 	);
 };
